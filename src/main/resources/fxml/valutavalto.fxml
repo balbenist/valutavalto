@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ValutaValtoController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <Label text="Összeg:" />
+    <TextField fx:id="Osszeg" />
+
+    <Label text="Erről a valutáról:" />
+    <ComboBox fx:id="Forras" visibleRowCount="3">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="USA dollár" />
+                <String fx:value="Euró" />
+                <String fx:value="Forint" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <Label text="Erre a valutára:" />
+    <ComboBox fx:id="Cel" visibleRowCount="3">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="USA dollár" />
+                <String fx:value="Euró" />
+                <String fx:value="Forint" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <Button onAction="#AtvaltoGomb" text="Átváltás" />
+
+    <Label fx:id="Eredmeny" />
+    <TextArea fx:id="Elozmeny" editable="false" />
+   <Button onAction="#ElozmenyTorles" text="Előzmények törlése" />
+</VBox>
